@@ -7,9 +7,7 @@ public class SearchNilai29 {
 
         for (int i = 0; i < nilai.length; i++) {
             if (nilai[i] == key) {
-                System.out.println(
-                    "Nilai " + key + " ditemukan pada indeks ke-" + i
-                );
+                System.out.println("Nilai " + key + " ditemukan pada indeks ke-" + i);
                 ditemukan = true;
                 break;
             }
