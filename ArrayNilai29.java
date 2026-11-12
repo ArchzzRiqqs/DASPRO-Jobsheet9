@@ -3,21 +3,35 @@ import java.util.Scanner;
 
 public class ArrayNilai29 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
 
         int[] nilaiAkhir = new int[10];
 
         for (int i = 0; i < nilaiAkhir.length; i++) {
             System.out.print("Masukkan nilai mahasiswa ke-" + (i + 1) + ": ");
-            nilaiAkhir[i] = sc.nextInt();
+            nilaiAkhir[i] = input.nextInt();
         }
 
-        for (int i = 0; i < nilaiAkhir.length; i++) {
-            String status = (nilaiAkhir[i] > 70) ? "LULUS" : "TIDAK LULUS";
+        int lulus = 0;
+        int tidakLulus = 0;
+        int nomor = 0;
 
-            System.out.println("Mahasiswa ke-" + (i + 1) + ": " + nilaiAkhir[i] + " (" + status + ")");
+        System.out.println("\nMahasiswa yang Lulus:");
+
+        for (int nilai : nilaiAkhir) {
+            nomor++;
+
+            if (nilai > 70) {
+                System.out.println("Mahasiswa ke-" + nomor + ": " + nilai);
+                lulus++;
+            } else {
+                tidakLulus++;
+            }
         }
 
-        sc.close();
+        System.out.println("\nJumlah mahasiswa lulus: " + lulus);
+        System.out.println("Jumlah mahasiswa tidak lulus: " + tidakLulus);
+
+        input.close();
     }
 }
